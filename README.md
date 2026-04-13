@@ -1,77 +1,90 @@
-🎓 BrainMovie – Système de Recommandation de Films
+🎥 BrainMovie : Ingénierie d'un Système de Recommandation Intelligent
+Projet de Spécialisation en Intelligence Artificielle & Big Data
 
-Ce projet a été réalisé dans le cadre d’un projet académique.
-Il consiste à concevoir et implémenter un système intelligent de recommandation de films basé sur le Content-Based Filtering.
+📝 Introduction Technique
+Dans le cadre de mon cursus en Intelligence Artificielle, j'ai conçu BrainMovie, une solution logicielle capable de modéliser les préférences cinématographiques. Ce projet explore la proximité sémantique entre les œuvres pour offrir des recommandations d'une grande précision, en transformant des métadonnées textuelles non structurées en vecteurs mathématiques exploitables.
 
-📌 Contexte académique
+🏗️ Architecture du Projet et Logique Modulaire
+Pour garantir que ce projet soit Production-Ready, j'ai adopté une architecture modulaire. Chaque composant est isolé pour permettre une maintenance aisée et une scalabilité future.
 
-Type : Projet académique
+1. Pipeline de Traitement des Données
+Ingestion : Chargement du dataset MovieLens (Métadonnées, Titres, Résumés).
 
-Auteur : Brahim Benrais
+Nettoyage (Preprocessing) : Suppression des caractères spéciaux, élimination des "Stop-words" et normalisation textuelle.
 
-Domaine : Data Science / Machine Learning
+Vectorisation : Transformation du texte en une matrice numérique via l'algorithme TF-IDF.
 
-🎯 Objectifs
+2. Flux de Travail Visuel
+Extrait de code
+graph TD
+    subgraph "Phase de Préparation"
+    A[Dataset MovieLens] --> B[Nettoyage & Normalisation]
+    B --> C[Fusion des Métadonnées - Soupe de Tags]
+    end
 
-Analyser les caractéristiques des films
-Construire un système de recommandation basé sur le contenu
-Générer des recommandations personnalisées
-Évaluer la pertinence des résultats
+    subgraph "Phase d'Intelligence"
+    C --> D[Vectorisation TF-IDF]
+    D --> E[Calcul de la Matrice de Similarité]
+    end
 
-🧠 Méthodologie
+    subgraph "Phase de Delivery"
+    E --> F[API Streamlit Interactive]
+    F --> G[Utilisateur Final]
+    end
 
-Exploration et nettoyage des données
-Transformation des données textuelles
-Vectorisation avec TF-IDF
-Calcul de similarité avec Cosine Similarity
-Génération de recommandations (Top-N)
+    style C fill:#f1f1f1,stroke:#333
+    style E fill:#e1f5fe,stroke:#01579b
+🧠 Méthodologie et Choix Algorithmiques
+L'Algorithme TF-IDF
+J'ai implémenté le Term Frequency-Inverse Document Frequency pour pondérer l'importance des termes. Un mot rare mais spécifique à un genre (ex: "Espace" pour la SF) aura un poids bien plus important qu'un mot générique (ex: "Histoire"), ce qui affine la pertinence du résultat.
 
-📊 Dataset
+Pourquoi le Filtrage Basé sur le Contenu ?
+Cette approche permet de résoudre le problème du "Cold Start". Le système peut recommander un film dès son ajout dans la base de données, sans attendre les évaluations des utilisateurs, simplement en analysant ses caractéristiques intrinsèques.
 
-Le projet utilise le dataset MovieLens, contenant :
+📂 Organisation des Ressources (Clean Architecture)
+src/ : Cœur du moteur (Scripts de calcul, API Streamlit).
 
-Titres des films
-Genres
-Descriptions
-Évaluations des utilisateurs
+data/ : Répertoire dédié aux fichiers CSV optimisés.
 
-🛠️ Technologies utilisées
-Python
-Pandas
-Scikit-learn
-TfidfVectorizer
-Cosine Similarity (linear_kernel)
-Streamlit
-Docker
+notebooks/ : Recherches exploratoires et visualisations.
 
-⚙️ Fonctionnement
+deployment/ : Fichiers de configuration Docker.
 
-Lorsqu’un utilisateur sélectionne un film :
+requirements.txt : Gestion des dépendances.
 
-Le système identifie le film dans la base de données
-Analyse ses caractéristiques
-Calcule la similarité avec les autres films
-Sélectionne les films les plus proches
-Affiche les recommandations
+🛠️ Stack Technique
+Langage : Python 3.x (Pandas, NumPy)
 
-📈 Résultats
+Machine Learning : Scikit-Learn
 
-Le système permet de proposer des recommandations pertinentes et rapides basées sur les caractéristiques des films.
+Interface : Streamlit
 
-🚀 Déploiement
+Conteneurisation : Docker
 
-L’application est conteneurisée avec Docker, ce qui facilite :
+🚀 Guide de Mise en Œuvre Rapide
+Bash
+# Installation des dépendances
+pip install -r requirements.txt
 
-L’installation
-La portabilité
-Le déploiement
+# Lancement via Docker
+docker build -t brainmovie-app .
+docker run -p 8501:8501 brainmovie-app
+📈 Roadmap & Perspectives
+[ ] Optimisation : Intégration de la bibliothèque FAISS pour gérer des millions de vecteurs.
 
-🔮 Perspectives
-Intégration du filtrage collaboratif
-Mise en place d’un système hybride
-Utilisation du Deep Learning
+[ ] Modèle Hybride : Couplage avec du Deep Learning.
 
-📌 Conclusion
+[ ] CI/CD : Automatisation du déploiement via GitHub Actions.
 
-BrainMovie démontre l’efficacité des techniques de Machine Learning dans les systèmes de recommandation.
-L’approche basée sur TF-IDF et la similarité cosinus permet de générer des recommandations adaptées aux préférences des utilisateurs.
+📬 Contact & Support
+Si vous avez des questions techniques ou des opportunités de collaboration, n'hésitez pas à me contacter :
+
+Nom : Brahim Benrais
+
+Profil : Étudiant en Développement de l'Intelligence Artificielle
+
+Email : brahimbenrais777@gmail.com
+
+Location : Casablanca, Maroc
+
+Dernière mise à jour : Avril 2026 | Licence MIT
