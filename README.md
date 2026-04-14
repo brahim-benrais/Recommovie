@@ -1,5 +1,6 @@
 🎥 RECOMMOVIE : Système de Recommandation de Films
-🚀 L'Ingénierie de la Précision Sémantique
+
+🚀 L'Ingénierie de la Précision Sémantique : 
 Une synergie entre Data Engineering, NLP et Machine Learning pour redéfinir l'expérience utilisateur.
 
 ⚡ 1. Vision & Manifeste : 
@@ -7,7 +8,9 @@ Dans l'immensité du Dataset MovieLens, des milliers d'histoires attendent d'êt
 Le Défi de Brahim Benrais : Résoudre l'équation de la pertinence. Comment transformer des métadonnées froides (descriptions, genres, mots-clés) en une connexion émotionnelle précise ? 
 La réponse réside dans la géométrie des données et la puissance des vecteurs sémantiques.
 
-🏗️ 2. L'Architecture Maîtresse (System Design)Pour un projet de cette envergure, le design ne peut être linéaire:
+🏗️ 2. L'Architecture Maîtresse (System Design):
+
+Pour un projet de cette envergure, le design ne peut être linéaire:
 Voici l'écosystème Recommovie segmenté par couches de compétences :Extrait de codegraph TD
     subgraph "I. L'ÉNERGIE (DATA FLOW)"
     
