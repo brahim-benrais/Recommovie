@@ -50,12 +50,19 @@ IsolationDockerStabilité du déploiement en environnement de production.Recherc
 📂 5. Anatomie du Répertoire (Engineering Standards)Plaintext📦 Recommovie:
 
  ┣ 📂 notebooks      # R&D, Analyses exploratoires et validations
+ 
  ┣ 📂 src            # Moteur algorithmique et application de production
+ 
  ┃ ┣ 📜 engine.py    # Le cœur de l'intelligence (ML Logic)
+ 
  ┃ ┗ 📜 app.py       # L'interface utilisateur
+ 
  ┣ 📂 data           # Datasets MovieLens (Raw & Curated)
+ 
  ┣ 📂 deployment      # Configuration pour l'orchestration Docker
+ 
  ┣ 📜 requirements.txt # Manifeste des dépendances système
+ 
  ┗ 📜 README.md      # La documentation maîtresse
  
 🚀 6. Protocole de Lancement (Ready for Takeoff)Mode Local StandardInitialisation : 
@@ -68,13 +75,14 @@ docker run -p 8501:8501 recommovie-app:final
 [ ] Hybridation : Fusionner les goûts sémantiques avec les tendances de la communauté.
 [ ] Automatisation : Mise en place d'une pipeline CI/CD pour une livraison continue.
 📬 Connect with the Creator
-Brahim Benrais
+
+Brahim BENRAIS
 
 Étudiant Passionné en Intelligence Artificielle & Big Data
 
 📧 Email : brahimbenrais777@gmail.com  | 📍 Casablanca, Maroc
 
-                                          Fait avec ☕ et passion par Brahim Benrais | 2026
+                             Fait avec ☕ et passion par Brahim Benrais | 2026
 
                                                                                     
                                                  
